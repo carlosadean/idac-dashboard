@@ -4,7 +4,7 @@ A static, public-facing dashboard showing the compute, storage, and data
 products available at each of the Vera C. Rubin Observatory's Independent
 Data Access Centers (IDACs).
 
-> Live site: _(to be set up via GitHub Pages — see [Deployment](#deployment))_
+> [Live site: https://knutago.github.io/idac-dashboard/]
 
 ---
 
