@@ -55,7 +55,7 @@ hardware:
 
 # === Software services & platform =========================================
 software_services: |
-  Distributed PostgreSQL databases for catalogs, data exploration/visualization dashboard, object storage with API for image coadds, Kubernetes orchestration on Openstack platform
+  Rubin-dedicated hyperconverged infrastructure cluster to host Rubin Science Platform (Portal/Notebooks/APIs) and distributed PostgreSQL databases for object-lite catalog. Additional high-capacity object storage to serve coadded images.
 
 # === Complementary / auxiliary datasets ===================================
 complementary_datasets: |
