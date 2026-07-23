@@ -23,7 +23,7 @@ data_products:
   forced_source_table:  false
   dia_object_table:     false
   dia_source_table:     false
-  solar_system_tables:  false
+  solar_system_tables:  true
   co_added_images:      true
   visit_images:         false
   difference_images:    false
@@ -32,7 +32,7 @@ data_products:
 
 # === Rubin data releases stored at this IDAC ==============================
 # List the planned data releases, e.g. ["DP1", "DR1", "DR2"]. Leave [] if TBD.
-data_releases: []
+data_releases: ["DP0.1", "DP0.2", "DP1", "DP2", "DR1", "..."]
 
 # === Capacity (integrated over the 13-year IDAC lifetime) =================
 capacity:
@@ -43,49 +43,75 @@ capacity:
   gpu_mhrs:              null
   free_gpu_mhrs:         null
   hosted_data_pb_years:  6.5
-  expected_local_users:  26
+  expected_local_users:  170
 
 # === Hardware architecture (FREE-TEXT, please fill in) ====================
 # e.g. "AMD EPYC 9654 (Genoa), 384 cores/node" / "NVIDIA H100 80GB SXM5"
 hardware:
-  cpu_architecture: ""
-  gpu_architecture: ""
-  storage_type:     ""
-  network:          ""
+  cpu_architecture: "AMD EPYC 9745 (Turin), 256 MB L3 cache, 128 cores/node, 4 nodes (512 cores total)"
+  gpu_architecture: "Not available (future planned expansion)"
+  storage_type:     "NFS over NAS (4.4 PB) + Lustre (0.6 PB), 5 PB total"
+  network:          "InfiniBand EDR 100 Gbps + Ethernet 100 Gbps"
+  database:         "PostgreSQL 18"
 
 # === Software services & platform =========================================
 software_services: |
-  LIneA Science Platform (LSP) with Jupyter notebooks, combining upgraded science server as deployed at NCSA with new user query (based on Daiquiri platform) and x-match service (based on LDSB); photo-z server, solar system portal, cluster analysis and visualization server (CANVAS); HPC cluster (Slurm, Open OnDemand); PostgreSQL.
+  LIneA Science Platform (LSP): Jupyter notebooks, Sky Viewer (Aladin based), User Query (Daiquiri based), Target Viewer, Photo-z Server, Occultation Prediction Database.
+  Under development: Image Viewer (Visiomatic based), Cluster Analysis and Visualization as a Service (CAnVAS), Value Added Catalog Creation tool, X-match service interface (based on LDSB).
 
 # === Complementary / auxiliary datasets ===================================
 complementary_datasets: |
-  Survey property maps (e.g. masks; depth); photo-z tables, spectroscopic redshift samples, training sets; cluster and stellar system candidate list updated with each DR;  regularly updated list of occultation events; SDSS and DES object catalogs; all-sky hips image
+  Survey property maps (e.g. masks; depth); photo-z tables, reference redshift catalogs and compilations, curated photo-z training sets; galaxy clusters candidates; stellar occultation events; a mirror of LSDB.io and MPC database.
 
 # === Science use cases this IDAC specializes in ===========================
 use_cases: |
-  Photo-z's; galaxy clusters; resolved stars; visualization; crossmatches; occultation events
+  Solar system, globular clusters, galaxy clusters, unsupervised federated learning.
 
 # === Science Collaboration agreements made ===========================
 science_collaboration_agreements: ""
 
 # === Onboarding & documentation links (please fill in) ====================
 documentation:
-  - title: "Onboarding guide"
-    url:   ""
-  - title: "Science platform / user portal"
-    url:   ""
+  - title: "Documentation"
+    url:   "https://docs.linea.org.br/en/index.html"
+  - title: "Registration"
+    url:   "https://docs.linea.org.br/en/lsst_registration.html"
+  - title: "Science Platform"
+    url:   "https://docs.linea.org.br/en/sci-platforms/index.html#idac-br-science-platform"
+  - title: "Datasets information"
+    url: "https://data.linea.org.br/en/index.html"
 
 # === Contacts =============================================================
 contacts:
+  - name:  "Service Desk"
+    email: "helpdesk@linea.org.br"
   - name:  "Carlos Adean"
     email: "carlosadean@linea.org.br"
-    role:  "Technical contact"
+    role:  "IDAC Contribution Lead"
   - name:  "Luiz Da Costa"
     email: "ldacosta@linea.org.br"
-    role:  "Programmatic contacts"
+    role:  "Program Lead"
   - name:  "Julia Gschwend"
     email: "julia@linea.org.br"
-    role:  "Programmatic contacts"
+    role:  "Program Manager / Software Contribution Lead"
+  - name:  "Rodrigo Boufleur"
+    email: "rodrigo.boufleur@linea.org.br"
+    role:  "Scientific Contact"
+  - name:  "Cristiano Singulani"
+    email: "singulani@linea.org.br"
+    role:  "Software Developer"
+  - name:  "Glauber Vila-verde"
+    email: "glauber.costa@linea.org.br"
+    role:  "Software Developer"
+  - name:  "Luigi Silva"
+    email: "luigi.silva@linea.org.br"
+    role:  "Software Developer"
+  - name:  "Eloir Troyack"
+    email: "eloir.troyack@linea.org.br"
+    role:  "Technical Contact"
+  - name:  "Nubia Garcia"
+    email: "nubia.garcia@linea.org.br"
+    role:  "Technical Contact"
 
 # === Free-text notes ======================================================
-notes: ""
+notes: "HPC resources are available to support the production of photometric redshifts (photo-z), another in-kind contribution under the LIneA–SLAC/DOE agreement. The Brazilian IDAC is already operational and available to users, while its infrastructure continues to be expanded toward its final configuration."
